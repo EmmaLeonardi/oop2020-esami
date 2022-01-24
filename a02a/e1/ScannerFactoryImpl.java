@@ -7,6 +7,8 @@ import java.util.Optional;
 import java.util.function.Function;
 import java.util.function.Predicate;
 
+import javax.print.DocFlavor.INPUT_STREAM;
+
 public class ScannerFactoryImpl implements ScannerFactory {
 
 	@Override
@@ -55,10 +57,37 @@ public class ScannerFactoryImpl implements ScannerFactory {
 
 			@Override
 			public Optional<Integer> scan(Iterator<Integer> input) {
-				List<Integer> list=new ArrayList<>();
-				input.forEachRemaining(a->list.add(a));
-				list.stream(); //???
-				return Optional.empty();
+				if(input.hasNext()==false) {
+					return Optional.empty();
+				}
+				
+				List<Integer> list_all=new ArrayList<>();
+				input.forEachRemaining(a->list_all.add(a));
+				List<Integer> longest=new ArrayList<>();
+				List<Integer> current=new ArrayList<>();
+				current.add(list_all.get(0));
+				list_all.stream().reduce((a,b)->{
+					if(b>a) {
+						//Se maggiore aggiungo a current
+						current.add(b);
+					}
+					else {
+						//Se minore
+						if(current.size()>longest.size()) {
+							longest.clear();
+							longest.addAll(current); //Current è la più lunga
+						}
+						current.clear();
+						current.add(b);
+					}
+					return b;
+				});
+				if(current.size()>longest.size()) {
+					longest.clear();
+					longest.addAll(current); //Current è la più lunga
+				}
+				
+				return longest.stream().max(Integer::compare);
 			}
 			
 		};
