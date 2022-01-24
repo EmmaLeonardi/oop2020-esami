@@ -7,8 +7,6 @@ import java.util.Optional;
 import java.util.function.Function;
 import java.util.function.Predicate;
 
-import javax.print.DocFlavor.INPUT_STREAM;
-
 public class ScannerFactoryImpl implements ScannerFactory {
 
 	@Override
