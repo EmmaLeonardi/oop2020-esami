@@ -1,7 +1,5 @@
 package a02b.e1;
 
-import java.util.function.Predicate;
-
 /**
  * An interface modelling a factory of various kind of PatternExtractors,
  * all having in common the fact that non-empty subsequences (patterns) are formed by
