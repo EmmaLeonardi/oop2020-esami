@@ -44,7 +44,7 @@ public class Test {
 
 	@org.junit.Before
 	public void initFactory() {
-		//this.factory = new BTreeFactoryImpl();
+		this.factory = new BTreeFactoryImpl();
 	}
 	
 	@org.junit.Test
@@ -63,6 +63,21 @@ public class Test {
 		
 		assertEquals(this.factory.leaf(1), tree.getLeft());
 		assertEquals(this.factory.leaf(2), tree.getRight());
+	}
+	
+	
+	@org.junit.Test
+	public void testToString() {
+		var left = this.factory.leaf(1);
+		var right = this.factory.leaf(2);
+		var tree = this.factory.compose(left, right); // l'albero (1,2)
+		var tree2=this.factory.compose(left, tree);
+		
+		System.out.println("(1) è "+left.toString());
+		System.out.println("(2) è "+right.toString());
+		System.out.println("(1,2) è "+tree.toString());
+		System.out.println("(1,(1,2) è "+tree2.toString());
+		
 	}
 	
 	@org.junit.Test
