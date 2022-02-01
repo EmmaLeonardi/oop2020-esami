@@ -54,6 +54,7 @@ class Leaf<L> implements BTree<L>{
 		return result;
 	}
 
+	@SuppressWarnings("rawtypes")
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)

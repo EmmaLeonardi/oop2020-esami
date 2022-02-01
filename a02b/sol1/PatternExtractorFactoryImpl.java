@@ -1,13 +1,9 @@
 package a02b.sol1;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Optional;
-import java.util.function.BiPredicate;
 import java.util.function.Function;
 import java.util.function.Predicate;
-import java.util.stream.Stream;
 
 public class PatternExtractorFactoryImpl implements PatternExtractorFactory {
 

@@ -56,6 +56,7 @@ public class TreeImpl<E> implements Tree<E> {
 		return result;
 	}
 
+	@SuppressWarnings("rawtypes")
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj) {

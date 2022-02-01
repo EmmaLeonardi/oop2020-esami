@@ -1,10 +1,6 @@
 package a05.sol1;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-import static org.junit.jupiter.api.Assertions.fail;
-
-import java.util.List;
 
 import org.junit.jupiter.api.Assertions;
 

@@ -11,7 +11,6 @@ public class GUI extends JFrame {
     private final Map<JButton,Pair<Integer,Integer>> cells = new HashMap<>();
     private final JButton next = new JButton(">");
     private final Logics logics;
-    private final boolean turn = true;
     
     public GUI(int size) {
         this.logics = new LogicsImpl(size);
@@ -38,7 +37,6 @@ public class GUI extends JFrame {
         
         for (int i=0; i<size; i++){
             for (int j=0; j<size; j++){
-                var p = new Pair<>(j,i);
                 final JButton jb = new JButton(" ");
                 this.cells.put(jb,new Pair<>(j,i));
                 jb.addActionListener(al);

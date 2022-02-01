@@ -1,6 +1,5 @@
 package a02b.sol1;
 
-import java.util.Iterator;
 import java.util.List;
 
 /**
